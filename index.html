@@ -57,18 +57,18 @@
       .schedule-title { font-weight: 700; }
       .schedule-time { font-weight: 400; }
 
-      /* Button Styling - Centered and 75% width */
+      /* Button Styling - Wider and Centered */
       .button {
         font-family: 'Google Sans', Roboto, sans-serif;
         font-weight: 700;
         text-transform: uppercase;
         display: flex;
         align-items: center;
-        width: 75%;
-        margin: 0 auto 12px auto; /* Centered, with spacing between buttons */
+        width: calc(75% + 50px); /* 50 points wider than previous 75% */
+        margin: 0 auto 12px auto; 
         padding: 12px 20px;
-        justify-content: flex-start; /* Keeps icon/text aligned left */
-        gap: 15px;
+        justify-content: center; 
+        gap: 15px; 
       }
       
       .button-stack { margin-top: 30px; }
