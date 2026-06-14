@@ -25,11 +25,37 @@
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); 
       }
       
-      .avatar--soft { margin-bottom: 40px; }
+      /* Container to hold both the image and the overlay text */
+      .avatar-container {
+        position: relative;
+        margin-bottom: 40px;
+        display: inline-block;
+        width: 100%;
+      }
 
-      h1 { font-size: 4em; font-weight: 700; margin-bottom: 10px; }
+      /* Image fade-out: starts at 75% for a 25% fade */
+      .avatar--soft { 
+        display: block;
+        width: 100%;
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+      }
 
-      /* Motivational line: Font size updated to 100px */
+      /* Positioned text over the image */
+      .overlay-text {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 4em;
+        font-weight: 700;
+        color: white; /* Set to white for readability on image */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow for contrast */
+        margin: 0;
+        padding-bottom: 10px;
+      }
+
+      /* Motivational line */
       .motivational-line {
         font-family: 'Dancing Script', cursive;
         font-size: 100px; 
@@ -92,16 +118,18 @@
   <div class="container">
       <div class="column">
         <div class="pink-card">
-          <img class="avatar--soft" src="https://cdn.beacons.ai/user_content/yiIaTVfrJqVJbaY3yR8mMhNuKt72/profile_breeusie.png?q=1781380195.734436">
-          <h1><div>SoberBree</div></h1>
+          <div class="avatar-container">
+            <img class="avatar--soft" src="https://cdn.beacons.ai/user_content/yiIaTVfrJqVJbaY3yR8mMhNuKt72/profile_breeusie.png?q=1781380195.734436">
+            <h1 class="overlay-text">SoberBree</h1>
+          </div>
 
           <div class="bio-text">
             <p class="motivational-line">Started living after quitting drinking</p>
             
-            <p class="schedule-header">Streaming Schedule (MST):</p>
+            <p class="schedule-header">Streaming Schedule:</p>
             
             <p class="schedule-title">MORNING DISCIPLINE GYM STREAM:</p>
-            <p class="schedule-time">Sunday-Friday 9A-11A on TikTok</p>
+            <p class="schedule-time">Sunday-Friday 9A-11A MST on TikTok</p>
             
             <div style="height: 10px;"></div>
             
