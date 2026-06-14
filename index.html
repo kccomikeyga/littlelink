@@ -53,12 +53,16 @@
         line-height: 1.1; 
       }
 
-      /* Container for schedule to ensure tight spacing */
+      /* Base styling for schedule items */
       .bio-text p {
-        font-size: 1.5em; 
         font-weight: 700; 
         margin: 0; 
         line-height: 1.0; /* Single-spaced */
+      }
+
+      /* Specific styling for the stream details (shrunk to 60%) */
+      .schedule-detail {
+        font-size: 0.9em;
       }
 
       /* Styling for the buttons */
@@ -89,13 +93,13 @@
 
             <div class="bio-text">
               <p class="motivational-line">Started living after quitting drinking</p>
+              <p style="font-size: 1.5em;">Streaming Schedule:</p>
               <br>
-              <p>Streaming Schedule:</p>
-              <p>MORNING DISCIPLINE GYM STREAM:</p>
-              <p>Sunday-Friday 9A-11A MST on TikTok</p>
+              <p class="schedule-detail">MORNING DISCIPLINE GYM STREAM:</p>
+              <p class="schedule-detail">Sunday-Friday 9A-11A MST on TikTok</p>
               <br>
-              <p>NIGHTTIME CHAOS AND GAMING STREAM:</p>
-              <p>Sunday-Friday 8P-12A on TikTok & Kick</p>
+              <p class="schedule-detail">NIGHTTIME CHAOS AND GAMING STREAM:</p>
+              <p class="schedule-detail">Sunday-Friday 8P-12A on TikTok & Kick</p>
             </div>
 
             <div class="button-stack" role="navigation">
