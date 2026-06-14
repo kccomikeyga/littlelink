@@ -1,131 +1,80 @@
 <!DOCTYPE html>
 <html class="theme-dark" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoberBree</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Dancing+Script:wght@400;700&family=Tai+Heritage+Pro&display=swap" rel="stylesheet">
 
-    <title>SoberBree</title>
-    <link rel="icon" type="image/x-icon" href="https://cdn.beacons.ai/user_content/yiIaTVfrJqVJbaY3yR8mMhNuKt72/profile_breeusie.png?q=1781380195.734436">
+  <style>
+    body { font-family: 'Tai Heritage Pro', serif; }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Tai+Heritage+Pro&display=swap" rel="stylesheet">
+    .pink-card {
+      background-color: #ff69b4;
+      padding: 40px 20px; 
+      border-radius: 24px; 
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      max-width: 500px; /* Limits the card width on larger screens */
+      margin: 0 auto;
+    }
+    
+    .avatar--soft { margin-bottom: 40px; display: block; margin-left: auto; margin-right: auto; }
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/brands.css">
+    h1 { font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
 
-    <style>
-      body { font-family: 'Tai Heritage Pro', serif; }
+    .motivational-line {
+      font-family: 'Bonheur Royale', cursive;
+      font-size: 3rem; 
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
 
-      .pink-card {
-        background-color: #ff69b4;
-        padding: 40px 20px; 
-        border-radius: 24px; 
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); 
-      }
-      
-      .avatar--soft { margin-bottom: 40px; }
-
-      h1 { font-size: 4em; font-weight: 700; margin-bottom: 10px; }
-
-      /* Motivational line */
-      .motivational-line {
-        font-family: 'Bonheur Royale', cursive;
-        font-size: 80px; 
-        font-weight: 400;
-        margin-bottom: 48px; 
-        line-height: 1.0; 
-      }
-
-      /* Schedule Header */
-      .schedule-header {
-        font-size: 2em;
-        font-weight: 700;
-        margin: 0 0 5px 0 !important;
-        padding: 0 !important;
-      }
-
-      /* Schedule Lines */
-      .schedule-title, .schedule-time {
-        font-size: 1.2em;
-        margin: 0 !important;
-        padding: 0 !important;
-        line-height: 1.0 !important;
-      }
-      
-      .schedule-title { font-weight: 700; }
-      .schedule-time { font-weight: 400; }
-
-      /* Button Styling - Wider and Centered */
-      .button {
-        font-family: 'Google Sans', Roboto, sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        width: calc(75% + 50px); /* 50 points wider than previous 75% */
-        margin: 0 auto 12px auto; 
-        padding: 12px 20px;
-        justify-content: center; 
-        gap: 15px; 
-      }
-      
-      .button-stack { margin-top: 30px; }
-      
-      /* Icon size control */
-      .button img.icon {
-        width: 24px;
-        height: 24px;
-      }
-    </style>
-  </head>
+    /* Improved Button Responsiveness */
+    .button {
+      font-family: 'Google Sans', Roboto, sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      width: 100%; /* Full width of the card */
+      max-width: 350px; /* Constrains width */
+      margin: 0 auto 12px auto; 
+      padding: 12px 20px;
+      justify-content: center; 
+      gap: 15px; 
+      box-sizing: border-box; /* Ensures padding doesn't break width */
+    }
+  </style>
+</head>
 
 <body>
-  
   <div class="container">
-        <div class="column">
-          <div class="pink-card">
-            <img class="avatar--soft" src="https://cdn.beacons.ai/user_content/yiIaTVfrJqVJbaY3yR8mMhNuKt72/profile_breeusie.png?q=1781380195.734436">
-            <h1><div>SoberBree</div></h1>
+    <div class="pink-card">
+      <img class="avatar--soft" src="https://cdn.beacons.ai/user_content/yiIaTVfrJqVJbaY3yR8mMhNuKt72/profile_breeusie.png?q=1781380195.734436" alt="Profile Picture">
+      <h1>SoberBree</h1>
 
-            <div class="bio-text">
-              <p class="motivational-line">Started living after quitting drinking</p>
-              
-              <p class="schedule-header">Streaming Schedule:</p>
-              
-              <p class="schedule-title">MORNING DISCIPLINE GYM STREAM:</p>
-              <p class="schedule-time">Sunday-Friday 9A-11A MST on TikTok</p>
-              
-              <div style="height: 10px;"></div>
-              
-              <p class="schedule-title">NIGHTTIME CHAOS AND GAMING STREAM:</p>
-              <p class="schedule-time">Sunday-Friday 8P-12A on TikTok & Kick</p>
-            </div>
+      <div class="bio-text">
+        <p class="motivational-line">Started living after quitting drinking</p>
+        
+        <p class="schedule-header">Streaming Schedule:</p>
+        <p class="schedule-title">MORNING DISCIPLINE GYM STREAM:</p>
+        <p class="schedule-time">Sunday-Friday 9A-11A MST on TikTok</p>
+        
+        <div style="height: 15px;"></div>
+        
+        <p class="schedule-title">NIGHTTIME CHAOS AND GAMING STREAM:</p>
+        <p class="schedule-time">Sunday-Friday 8P-12A on TikTok & Kick</p>
+      </div>
 
-            <div class="button-stack" role="navigation">
-              <a class="button button-tiktok" href="https://www.tiktok.com/@breemichelleusie" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/icons/tiktok.svg" alt="TikTok">25K!!!
-              </a>
-              <a class="button button-amazon" href="https://a.co/d/0hKdlkc9" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/icons/amazon.svg" alt="Amazon">My Amazon Page - Shop My Favorites
-              </a>
-              <a class="button button-discord" href="https://discord.com/invite/HRSdaMwJGX" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/icons/discord.svg" alt="Discord">SOBER GANG | YEASTIE BOYS
-              </a>
-              <a class="button button-instagram" href="https://www.instagram.com/breemichelleusie" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/icons/instagram.svg" alt="Instagram">My Instagram
-              </a>
-              <a class="button button-instagram" href="https://www.instagram.com/sobersourdoughllc" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/icons/instagram.svg" alt="Instagram">Order Bread | SoberSourdough
-              </a>
-              <a class="button button-kick" href="https://kick.com/soberbree" target="_blank" rel="noopener" role="button">
-                <img class="icon" src="images/icons/kick.svg" alt="Kick">SoberBree Gaming Stream
-              </a>
-            </div>
-          </div>
-          <footer>Don't Be A Dick.</footer>
+      <div class="button-stack" role="navigation">
+        <a class="button button-tiktok" href="https://www.tiktok.com/@breemichelleusie" target="_blank" rel="noopener" role="button">
+          <img class="icon" src="images/icons/tiktok.svg" alt="TikTok"> 25K!!!
+        </a>
         </div>
+    </div>
   </div>
 </body>
 </html>
