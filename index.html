@@ -46,7 +46,7 @@
         padding: 0 !important;
       }
 
-      /* Schedule Lines - Forced zero gap */
+      /* Schedule Lines */
       .schedule-title, .schedule-time {
         font-size: 1.2em;
         margin: 0 !important;
@@ -57,14 +57,18 @@
       .schedule-title { font-weight: 700; }
       .schedule-time { font-weight: 400; }
 
-      /* Button Styling */
+      /* Button Styling - Centered and 75% width */
       .button {
         font-family: 'Google Sans', Roboto, sans-serif;
         font-weight: 700;
         text-transform: uppercase;
-        display: flex; /* Ensures icon and text align */
+        display: flex;
         align-items: center;
-        gap: 10px; /* Space between icon and text */
+        width: 75%;
+        margin: 0 auto 12px auto; /* Centered, with spacing between buttons */
+        padding: 12px 20px;
+        justify-content: flex-start; /* Keeps icon/text aligned left */
+        gap: 15px;
       }
       
       .button-stack { margin-top: 30px; }
@@ -92,6 +96,8 @@
               
               <p class="schedule-title">MORNING DISCIPLINE GYM STREAM:</p>
               <p class="schedule-time">Sunday-Friday 9A-11A MST on TikTok</p>
+              
+              <div style="height: 10px;"></div>
               
               <p class="schedule-title">NIGHTTIME CHAOS AND GAMING STREAM:</p>
               <p class="schedule-time">Sunday-Friday 8P-12A on TikTok & Kick</p>
