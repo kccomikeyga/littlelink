@@ -1,292 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html class="theme-dark" lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>SoberBree</title>
     <link rel="icon" type="image/x-icon" href="https://cdn.beacons.ai/user_content/yiIaTVfrJqVJbaY3yR8mMhNuKt72/profile_breeusie.png?q=1781380195.734436">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;700&family=Tai+Heritage+Pro&display=swap" rel="stylesheet">
-    
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/brands.css">
+
     <style>
-        :root {
-            --pink: #ff69b4;
-        }
-        
-        body {
-            font-family: 'Tai Heritage Pro', serif;
-            margin: 0;
-            padding: 20px 10px;
-            min-height: 100vh;
-            background: radial-gradient(circle at center, #ffad33, #d82c78);
-            background-attachment: fixed;
-            color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      /* Radial Gradient Background */
+      body { 
+        font-family: 'Tai Heritage Pro', serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: radial-gradient(circle, #ffad33, #d82c78);
+        background-attachment: fixed;
+      }
 
-        .container {
-            max-width: 480px;
-            width: 100%;
-            margin: 0 auto;
-        }
+      .pink-card {
+        background-color: #ff69b4;
+        padding: 40px 20px; 
+        border-radius: 24px; 
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); 
+      }
+      
+      /* Container to hold both the image and the overlay text */
+      .avatar-container {
+        position: relative;
+        margin-bottom: 40px;
+        display: inline-block;
+        width: 100%;
+      }
 
-        .pink-card {
-            background-color: var(--pink);
-            padding: 40px 24px;
-            border-radius: 28px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-            text-align: center;
-        }
+      /* Image fade-out: starts at 75% for a 25% fade */
+      .avatar--soft { 
+        display: block;
+        width: 100%;
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+      }
 
-        .avatar-container {
-            position: relative;
-            margin-bottom: 30px;
-            width: 100%;
-        }
+      /* Positioned text over the image */
+      .overlay-text {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 4em;
+        font-weight: 700;
+        color: white; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+        margin: 0;
+        padding-bottom: 10px;
+      }
 
-        .avatar--soft {
-            width: 100%;
-            border-radius: 20px;
-            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-        }
+      /* Motivational line */
+      .motivational-line {
+        font-family: 'Dancing Script', cursive;
+        font-size: 100px; 
+        font-weight: 400;
+        margin-bottom: 48px; 
+        line-height: 1.0; 
+        color: #000000;
+      }
 
-        .overlay-text {
-            position: absolute;
-            bottom: 12px;
-            left: 0;
-            width: 100%;
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: white;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
-            margin: 0;
-        }
+      /* Schedule Header Styling: Underlined, Larger, Roboto */
+      .schedule-header {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5em;
+        text-decoration: underline;
+        font-weight: 700;
+        margin: 15px 0 5px 0 !important;
+        padding: 0 !important;
+      }
 
-        .motivational-line {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.4rem;
-            line-height: 1.1;
-            margin: 20px 0 30px 0;
-            color: #000;
-        }
+      .schedule-title, .schedule-time {
+        font-family: 'Roboto', sans-serif;
+      }
 
-        .countdown {
-            background: rgba(255,255,255,0.85);
-            padding: 16px 20px;
-            border-radius: 16px;
-            margin: 20px 0;
-            font-family: 'Roboto', sans-serif;
-        }
+      .schedule-title, .schedule-time {
+        font-size: 1.2em;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1.0 !important;
+      }
+      
+      .schedule-title { font-weight: 700; }
+      .schedule-time { font-weight: 400; }
 
-        .countdown-label {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #000;
-        }
+      /* Button Styling: Roboto + All Caps */
+      .button {
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        width: calc(75% + 50px);
+        margin: 0 auto 12px auto; 
+        padding: 12px 20px;
+        justify-content: center; 
+        gap: 15px; 
+      }
+      
+      .button-stack { margin-top: 30px; }
+      
+      /* Icon size control */
+      .button img.icon {
+        width: 24px;
+        height: 24px;
+      }
 
-        .countdown-timer {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        .schedule-header {
-            font-family: 'Roboto', sans-serif;
-            font-size: 2rem;
-            text-decoration: underline;
-            font-weight: 700;
-            margin: 30px 0 12px 0;
-        }
-
-        .schedule-title {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin: 18px 0 4px 0;
-        }
-
-        .schedule-time {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 400;
-            margin: 0;
-        }
-
-        .button {
-            font-family: 'Roboto', sans-serif;
-            text-transform: uppercase;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            max-width: 360px;
-            margin: 12px auto;
-            padding: 16px 20px;
-            background: rgba(255,255,255,0.95);
-            color: #000;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .button img.icon {
-            width: 26px;
-            height: 26px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.95rem;
-            color: #000;
-            font-weight: normal;
-        }
-
-        @media (max-width: 480px) {
-            .overlay-text { font-size: 2.6rem; }
-            .motivational-line { font-size: 2rem; }
-            .countdown-timer { font-size: 1.7rem; }
-        }
+      /* Footer styling: Black and unbold */
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.9em;
+        color: #000000;
+        font-weight: normal;
+      }
     </style>
-</head>
+  </head>
+
 <body>
-    <div class="container">
+  
+  <div class="container">
+      <div class="column">
         <div class="pink-card">
-            <div class="avatar-container">
-                <img class="avatar--soft" 
-                     src="https://cdn.beacons.ai/user_content/yiIaTVfrJqVJbaY3yR8mMhNuKt72/profile_breeusie.png?q=1781380195.734436"
-                     alt="SoberBree profile picture">
-                <h1 class="overlay-text">SoberBree</h1>
-            </div>
+          <div class="avatar-container">
+            <img class="avatar--soft" src="https://cdn.beacons.ai/user_content/yiIaTVfrJqVJbaY3yR8mMhNuKt72/profile_breeusie.png?q=1781380195.734436">
+            <h1 class="overlay-text">SoberBree</h1>
+          </div>
 
+          <div class="bio-text">
             <p class="motivational-line">Started living after quitting drinking</p>
+            
+            <p class="schedule-header">Streaming Schedule:</p>
+            
+            <p class="schedule-title">MORNING DISCIPLINE GYM STREAM:</p>
+            <p class="schedule-time">Sunday-Friday 9A-11A MST on TikTok</p>
+            
+            <div style="height: 10px;"></div>
+            
+            <p class="schedule-title">NIGHTTIME CHAOS AND GAMING STREAM:</p>
+            <p class="schedule-time">Sunday-Friday 8P-12A on TikTok & Kick</p>
+          </div>
 
-            <!-- COUNTDOWN -->
-            <div class="countdown" id="countdown">
-                <div class="countdown-label">Next Stream Starts In</div>
-                <div class="countdown-timer" id="timer">Loading...</div>
-            </div>
-
-            <p class="schedule-header">Streaming Schedule</p>
-
-            <p class="schedule-title">MORNING DISCIPLINE GYM STREAM</p>
-            <p class="schedule-time">Sunday–Friday 9A–11A MST on TikTok</p>
-
-            <p class="schedule-title">NIGHTTIME CHAOS & GAMING</p>
-            <p class="schedule-time">Sunday–Friday 8P–12A on TikTok & Kick</p>
-
-            <div class="button-stack">
-                <a class="button" href="https://www.tiktok.com/@breemichelleusie" target="_blank">
-                    <img class="icon" src="images/icons/tiktok.svg" alt=""> TikTok • 25K!!!
-                </a>
-                <a class="button" href="https://a.co/d/0hKdlkc9" target="_blank">
-                    <img class="icon" src="images/icons/amazon.svg" alt=""> Shop My Favorites
-                </a>
-                <a class="button" href="https://discord.com/invite/HRSdaMwJGX" target="_blank">
-                    <img class="icon" src="images/icons/discord.svg" alt=""> Sober Gang | Yeastie Boys
-                </a>
-                <a class="button" href="https://www.instagram.com/breemichelleusie" target="_blank">
-                    <img class="icon" src="images/icons/instagram.svg" alt=""> Instagram
-                </a>
-                <a class="button" href="https://www.instagram.com/sobersourdoughllc" target="_blank">
-                    <img class="icon" src="images/icons/instagram.svg" alt=""> Order Bread • SoberSourdough
-                </a>
-                <a class="button" href="https://kick.com/soberbree" target="_blank">
-                    <img class="icon" src="images/icons/kick.svg" alt=""> Gaming Stream
-                </a>
-            </div>
+          <div class="button-stack" role="navigation">
+            <a class="button button-tiktok" href="https://www.tiktok.com/@breemichelleusie" target="_blank" rel="noopener" role="button">
+              <img class="icon" src="images/icons/tiktok.svg" alt="TikTok">25K!!!
+            </a>
+            <a class="button button-amazon" href="https://a.co/d/0hKdlkc9" target="_blank" rel="noopener" role="button">
+              <img class="icon" src="images/icons/amazon.svg" alt="Amazon">Amazon - Shop My Favorites
+            </a>
+            <a class="button button-discord" href="https://discord.com/invite/HRSdaMwJGX" target="_blank" rel="noopener" role="button">
+              <img class="icon" src="images/icons/discord.svg" alt="Discord">SOBER GANG | YEASTIE BOYS
+            </a>
+            <a class="button button-instagram" href="https://www.instagram.com/breemichelleusie" target="_blank" rel="noopener" role="button">
+              <img class="icon" src="images/icons/instagram.svg" alt="Instagram">Instagram
+            </a>
+            <a class="button button-instagram" href="https://www.instagram.com/sobersourdoughllc" target="_blank" rel="noopener" role="button">
+              <img class="icon" src="images/icons/instagram.svg" alt="Instagram">Order Bread | SoberSourdough
+            </a>
+            <a class="button button-kick" href="https://kick.com/soberbree" target="_blank" rel="noopener" role="button">
+              <img class="icon" src="images/icons/kick.svg" alt="Kick">SoberBree Gaming Stream
+            </a>
+          </div>
         </div>
-
         <footer>Don't Be A Dick.</footer>
-    </div>
-
-    <script>
-        function getNextStreamTime() {
-            const now = new Date();
-            const mstOffset = -7; // MST is UTC-7 (standard time)
-            const utcNow = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const mstTime = new Date(utcNow + (mstOffset * 3600000));
-
-            let day = mstTime.getDay(); // 0=Sunday, 6=Saturday
-            let hours = mstTime.getHours();
-            let minutes = mstTime.getMinutes();
-
-            // Create possible stream times for today
-            let morning = new Date(mstTime);
-            morning.setHours(9, 0, 0, 0);
-
-            let night = new Date(mstTime);
-            night.setHours(20, 0, 0, 0);
-
-            let nextStream = null;
-
-            // Check today first
-            if (day >= 0 && day <= 5) { // Sunday to Friday
-                if (hours < 9) {
-                    nextStream = morning;
-                } else if (hours < 20) {
-                    nextStream = night;
-                }
-            }
-
-            // If no stream today or already passed, find next day
-            if (!nextStream) {
-                let daysToAdd = 1;
-                while (true) {
-                    let futureDate = new Date(mstTime);
-                    futureDate.setDate(futureDate.getDate() + daysToAdd);
-                    let futureDay = futureDate.getDay();
-                    
-                    if (futureDay >= 0 && futureDay <= 5) { // Sunday-Friday
-                        futureDate.setHours(9, 0, 0, 0);
-                        nextStream = futureDate;
-                        break;
-                    }
-                    daysToAdd++;
-                }
-            }
-
-            return nextStream;
-        }
-
-        function updateCountdown() {
-            const next = getNextStreamTime();
-            const now = new Date();
-            const diff = next - now;
-
-            if (diff <= 0) {
-                document.getElementById('timer').textContent = "LIVE NOW!";
-                return;
-            }
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-            let display = '';
-            if (days > 0) display += `${days}d `;
-            display += `${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m`;
-
-            document.getElementById('timer').textContent = display;
-        }
-
-        // Update every 30 seconds
-        setInterval(updateCountdown, 30000);
-        updateCountdown(); // Initial call
-    </script>
+      </div>
+  </div>
 </body>
 </html>
